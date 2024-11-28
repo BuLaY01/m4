@@ -1,3 +1,50 @@
-body{
-    background-color: yellow;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ef303b;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 6px;
+  background-color: #481c19;
+  color: gray;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: black;
+}
+
+.result {
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question {
+  margin-top: 5px;
+}
+
+.btn_block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
 }
