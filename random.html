@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    img {
+      position: absolute;
+      width: 150px;
+      top: 85%;
+      left: 75%;
+      transition: all 0.4s;
+    }
+  </style>
+  <body>
+    <p id="score">0</p>
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtaAC6l6kwJqXwTjydUczJS7OtIRW5HRxY4g&s"
+      id="img"
+    />
+  </body>
+  <script>
+    let img = document.getElementById("img");
+    let score = document.getElementById("score");
+
+    let num = 0;
+
+    function randint(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function move() {
+      let y = randint(0, 85);
+      let x = randint(0, 75);
+      img.style.top = `${y}%`;
+      img.style.left = `${x}%`;
+    }
+
+    setInterval(move, 500);
+
+    function changeCount() {
+      num++;
+      score.innerHTML = num;
+    }
+    img.addEventListener("click", changeCount);
+  </script>
+</html>
