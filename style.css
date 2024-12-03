@@ -48,3 +48,11 @@ body {
   width: 100%;
   margin-top: 15px;
 }
+
+.btn_block > button {
+  margin: 0 10px;
+}
+
+.none {
+  display: none;
+}
