@@ -18,9 +18,10 @@ let questions = [
 let question_now = 0; // индес текущего вопроса
 let count_r_answers = 0; // колво паривльных ответов
 
-function start_work() { // вызывается при запуске программы
+function start_work() {
+  // вызывается при запуске программы
   result.classList.add("none"); // доьавляем класс none, в резултате элеметн исчезает
-  container.classList.remove("none");// убиарем класс none, в результате элемент появляется
+  container.classList.remove("none"); // убиарем класс none, в результате элемент появляется
   start.classList.add("none"); //
 
   question_generate();
@@ -47,19 +48,19 @@ function check_r_answer(answer) {
   }
   question_now += 1; // увеличиваем индекс и переходим к след вопросу
 
-  if (questions.length > question_now) { // чтобы индекс не был больше максимального
+  if (questions.length > question_now) {
+    // чтобы индекс не был больше максимального
     question_generate();
   } else {
-  count()
+    count();
   }
 }
 
 function count() {
-  start.classList.remove('none')
-  container.classList.add('none')
-  result.classList.remove('none')
-  result.innerHTML = `Результат ${count_r_answers} / ${questions.length}`
-  count_r_answers = 0
-  question_now = 0
+  start.classList.remove("none");
+  container.classList.add("none");
+  result.classList.remove("none");
+  result.innerHTML = `Результат ${count_r_answers} / ${questions.length}`;
+  count_r_answers = 0;
+  question_now = 0;
 }
-

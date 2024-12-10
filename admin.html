@@ -26,26 +26,48 @@
 
     div {
       position: absolute;
-      top: 50%;
+      top: -50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 500px;
+      transition: all 0.5s;
     }
     
   </style>
   <body class="bg-black d-flex justify-content-center align-items-center">
-    <button type="button" class="btn btn-secondary">
+    <button type="button" class="btn btn-secondary" id = 'btn_login'>
       <i class="fas fa-tv"></i>
-      <span id = 'btn_login'> Вход </span>
+      <span> Вход </span>
     </button>
     <div class="bg-light p-3" id = 'container'>
       <input type="text" class="form-control" placeholder="Логин" />
       <input type="password" class="form-control mt-1" placeholder="Пароль" />
       <nav class = 'd-flex justify-content-between mt-3'>
-        <button type="button" class="btn btn-dark">Войти</button>
-        <button type="button" class="btn btn-dark">Зарегистрироваться</button>
-        <button type="button" class="btn btn-dark" id = 'btn_back'>Назад</button>
+        <button type="button" class="btn btn-dark fas fa-sign-in"> Войти</button>
+        <button type="button" class="btn btn-dark far fa-sign-in"> Зарегистрироваться</button>
+        <button type="button" class="btn btn-dark fas fa-backspace" id = 'btn_back'> Назад</button>
       </nav>
     </div>
   </body>
+  <script>
+    let btn_login = document.getElementById('btn_login')
+    let container = document.getElementById('container')
+
+    let btn_back = document.getElementById('btn_back')
+
+    let view = false
+
+    function change_page() {
+      view = !view
+
+      if (view) {
+        container.style.top = '50%'
+      }
+      else {
+        container.style.top = '-50%'
+      }
+    }
+    btn_login.addEventListener('click', change_page)
+    btn_back.addEventListener('click', change_page)
+  </script>
 </html>
